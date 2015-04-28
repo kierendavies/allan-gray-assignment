@@ -1,7 +1,7 @@
 package za.co.kierendavies.tweetfeed
 
 class TweetSpec extends UnitSpec {
-  val user = new User("Dudebro")
+  val user = User.byName("Dudebro")
   val content = "This is a tweet"
   val tweet = new Tweet(user, content)
   val tweet2 = new Tweet(user, content)
@@ -25,6 +25,7 @@ class TweetSpec extends UnitSpec {
       val t1 = new Tweet(user, "")
       val t2 = new Tweet(user, "")
       t1 should be < t2
+      t2 should be > t1
     }
 
     it("converts to string") {
