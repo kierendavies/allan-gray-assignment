@@ -1,7 +1,7 @@
 package za.co.kierendavies.tweetfeed
 
 class TweetSpec extends UnitSpec {
-  val user = User.byName("Dudebro")
+  val user = User.byName("Alice")
   val content = "This is a tweet"
   val tweet = new Tweet(user, content)
   val tweet2 = new Tweet(user, content)
@@ -29,7 +29,7 @@ class TweetSpec extends UnitSpec {
     }
 
     it("converts to string") {
-      tweet.toString shouldBe "@Dudebro: This is a tweet"
+      tweet.toString shouldBe s"@${user.name}: $content"
     }
   }
 }
