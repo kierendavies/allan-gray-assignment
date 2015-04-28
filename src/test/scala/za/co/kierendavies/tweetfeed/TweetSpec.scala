@@ -28,7 +28,7 @@ class TweetSpec extends UnitSpec {
       t2 should be > t1
     }
 
-    it("converts to string") {
+    it("renders a string") {
       tweet.toString shouldBe s"@${user.name}: $content"
     }
   }

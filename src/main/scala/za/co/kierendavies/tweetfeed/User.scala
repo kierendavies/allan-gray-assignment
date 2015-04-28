@@ -12,6 +12,10 @@ class User private (val name: String) {
   def follow(name: String): Unit = follow(User.byName(name))
 
   def tweet(content: String): Unit = tweets += new Tweet(this, content)
+
+  def feed: Feed = new Feed(
+    this,
+    if (following.isEmpty) Seq[Tweet]() else following.map(_.tweets).reduce(_ union _).toSeq)
 }
 
 object User {
@@ -26,4 +30,6 @@ object User {
       user
     }
   }
+
+  def allFeeds: Seq[Feed] = users.values.toSeq.sortBy(_.name).map(_.feed)
 }
