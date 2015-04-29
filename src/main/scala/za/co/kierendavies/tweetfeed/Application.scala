@@ -15,5 +15,6 @@ object Application extends App {
     case Some(config) =>
       UserFileParser.parseFile(config.userFileName)
       TweetFileParser.parseFile(config.tweetFileName)
+      println(User.allFeeds.mkString("\n"))
   }
 }
