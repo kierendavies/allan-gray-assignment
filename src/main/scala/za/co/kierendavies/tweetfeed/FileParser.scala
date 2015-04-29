@@ -8,6 +8,7 @@ trait FileParser extends StrictLogging {
   def parseLine(line: String): Unit
 
   def parseFile(fileName: String): Unit = {
+    logger.info("Parsing $fileName")
     Source.fromFile(fileName).getLines.foreach { line =>
       try {
         parseLine(line)
