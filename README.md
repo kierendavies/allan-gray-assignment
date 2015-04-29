@@ -14,3 +14,7 @@ I took this as an opportunity to learn Scala, which I have been wanting to do fo
 Run unit tests with `sbt test`
 
 Run the application with `sbt run`
+
+## Notes
+
+### Concurrency
