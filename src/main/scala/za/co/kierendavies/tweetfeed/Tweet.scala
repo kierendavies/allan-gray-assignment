@@ -11,9 +11,7 @@ object Tweet {
   private var lastId: Int = -1
 
   def nextId: Int = {
-    this.synchronized {
-      lastId += 1
-      lastId
-    }
+    lastId += 1
+    lastId
   }
 }
