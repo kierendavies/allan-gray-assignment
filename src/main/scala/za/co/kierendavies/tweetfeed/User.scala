@@ -15,7 +15,7 @@ class User private (val name: String) {
 
   def feed: Feed = new Feed(
     this,
-    if (following.isEmpty) Seq[Tweet]() else following.map(_.tweets).reduce(_ union _).toSeq)
+    if (following.isEmpty) Seq[Tweet]() else following.map(_.tweets).reduce(_ union _).union(tweets).toSeq)
 }
 
 object User {
