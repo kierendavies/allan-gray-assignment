@@ -22,12 +22,14 @@ object User {
   private var users = new mutable.HashMap[String, User]
 
   def byName(name: String): User = {
-    if (users contains name) {
-      users(name)
-    } else {
-      val user = new User(name)
-      users += (name -> user)
-      user
+    this.synchronized {
+      if (users contains name) {
+        users(name)
+      } else {
+        val user = new User(name)
+        users += (name -> user)
+        user
+      }
     }
   }
 
