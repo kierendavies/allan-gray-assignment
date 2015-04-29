@@ -2,6 +2,11 @@ package za.co.kierendavies.tweetfeed
 
 import scopt.OptionParser
 
+/** Application runner class.
+  *
+  * When run, reads the user and tweet files from the command line, parses
+  * them, then prints the simulated feeds to stdout.
+  */
 object Application extends App {
   val options = new OptionParser[Config]("tweetfeed") {
     opt[String]('u', "users") required() valueName("<file>") action {
