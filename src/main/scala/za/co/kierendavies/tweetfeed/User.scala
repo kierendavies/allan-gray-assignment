@@ -27,7 +27,7 @@ class User private (val name: String) {
     *
     * Represented as just the user's name.
     *
-    * @return The string represention.
+    * @return The string representation.
     */
   override def toString = name
 
