@@ -4,6 +4,8 @@ Coding assignment for Allan Gray application screening.  See the [task descripti
 
 I took this as an opportunity to learn Scala, which I have been wanting to do for a while.  I made an effort to use the language as idiomatically as possible.
 
+The solution is admittedly ridiculously over-engineered, but it was fun to write, and shows off a few cool language features.
+
 ## Prerequisites
 
 The application was only tested with the versions of the dependencies listed below.  Other versions may work.
